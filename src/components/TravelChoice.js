@@ -18,53 +18,61 @@ class TravelChoice extends React.Component {
         this.state = {
             category : 'beach',
             city : '',
-            query : '',
             webcams : [],
             id : [],
-            uniqueId : 0   
+            // locationTitle : [],
+            uniqueId : 0,
+            badCities : [
+                {id : 1580835607, city: 'Lille'},
+                {id : 1582907598, city : 'Reims'}
+                        ]
         }
-
-        //this.getOneId = this.getOneId.bind(this)
 
     }
     componentDidMount() {
         this.getData()
-        this.getOneId()
     }
 
     getData = () => {
-        //Cas n°1 : Si categorie not empty, on requête sur la catégorie
-        
-        Axios
-        .get(`https://api.windy.com/api/webcams/v2/list/property=live/category=${this.state.category}?key=${API_KEY}`)
-        .then(res => this.setState({ webcams : res.data.result.webcams }))
-        .then(res => this.setState({id : this.state.webcams.map(e => (e.id))}))
-        //Cas n°2 : Sinon on requête sur la city
+        //Cas n°1 : Si categorie not empty, on lance l'appel et de l'API et on fait une requête sur la catégorie
+        if (this.state.category !== '') {
+            Axios
+            .get(`https://api.windy.com/api/webcams/v2/list/property=live/category=${this.state.category}?key=${API_KEY}`)
+            .then(res => this.setState({ webcams : res.data.result.webcams }))
+            .then(res => this.setState({id : this.state.webcams.map(e => (e.id))}))
+            // .then(res => this.setState({locationTitle : this.state.webcams.map(e => e.title)}))
+            .then(res=> this.setState({uniqueId : Number(this.state.id[Math.floor(Math.random() * this.state.id.length)])}))
+
+        } 
     }
 
-    getOneId = () => {
-        let items = this.state.id
-        let item = Number(items[Math.floor(Math.random() * items.length)])
-        this.setState({uniqueId : item})
-        // return item
-        // console.log(this.state.uniqueId)
-        // this.setState({uniqueId : item})
 
-        // this.setState({uniqueId : items[Math.floor(Math.random() * items.length)]})
-        // this.setState({uniqueId : this.state.uniqueId})   
-    }
+    // getLocationTitlefromUniqueId = (arrayOfWebcams) => {
+    //     const titleLocation = arrayOfWebcams.filter(e=> e.id = 1171052360)
+    //     return titleLocation[0]
+
+    // }
+
+    // getCityTitlefromId =(webcamId) => {
+    //     Axios
+    //     .get(`https://api.windy.com/api/webcams/v2/list/webcam=${webcamId}?show=webcams:image,location,player&key=oLq3d1jR9aUQroza4Ttjnwn6TG6lHz6z`)
+    //     .then(res=> console.log(res.data.result.webcams[0].title))
+    // }
 
    render() {
     //    console.log(this.state.webcams)
-       console.log(this.state.uniqueId)
-    // console.log(this.getOneId())
-    // console.log(this.getOneId())
+    // console.log(this.getCityTitlefromId(1580835607))
+    // console.log(this.state.webcams)
+    // console.log(this.state.locationTitle)
+    // console.log(this.getLocationTitlefromUniqueId(this.state.webcams))
+    
    return(
        <>
 
             <h1>Test</h1>
-            <iframe allow="autoplay" src='https://webcams.windy.com/webcams/public/embed/player/1580835607/stream'></iframe>
-
+            <h2>L'id de la webcam est : {this.state.uniqueId}</h2>
+            {/* <p>{this.state.webcams.title}</p> */}
+            <iframe allow="autoplay" src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.uniqueId}/stream`}></iframe>
        </>
    ) 
    }
