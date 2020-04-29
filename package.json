@@ -12,7 +12,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-wheel-of-fortune": "0.0.8",
     "react-pose": "^4.0.10",
+    "react-roulette": "0.0.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {

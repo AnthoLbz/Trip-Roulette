@@ -1,93 +1,72 @@
 import React from "react";
 import "./wheel.css";
 
-
 class Wheel extends React.Component {
-  state = {
-    name: "circle",
-  };
-  startRotation = () => {
-    this.setState({
-      name: "circle start-rotate",
-    });
-    setTimeout(() => {
-      this.setState({
-        name: "circle start-rotate stop-rotate",
-      });
-    }, Math.floor(Math.random() * 10000) + 1);
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedItem: null,
+    };
+    this.selectItem = this.selectItem.bind(this);
+  }
+
+  selectItem() {
+    if (this.state.selectedItem === null) {
+      const selectedItem = Math.floor(Math.random() * this.props.items.length);
+      if (this.props.onSelectItem) {
+        this.props.onSelectItem(selectedItem);
+      }
+      this.setState({ selectedItem });
+    } else {
+      this.setState({ selectedItem: null });
+      setTimeout(this.selectItem, 500);
+    }
+  }
+  switchToName(){
+    const places = [
+      "Mountain",
+      "Forest",
+      "Landscape",
+      "Underwater",
+      "Beach",
+      "City",
+      "Hell",
+    ];
+    const convert = places[this.state.selectedItem]
+    console.log(convert)
+  }
   render() {
+    const { selectedItem } = this.state;
+    const { items } = this.props;
+
+    const wheelVars = {
+      "--nb-item": items.length,
+      "--selected-item": selectedItem,
+    };
+    const spinning = selectedItem !== null ? "spinning" : "";
+
+    
+
     return (
-      <div className="App">
-        <div className="arrow"></div>
-        <ul className={this.state.name}>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Beach
+      <div className="wheel-container">
+        <div
+          className={`wheel ${spinning}`}
+          style={wheelVars}
+          onClick={this.selectItem}
+        >
+          {items.map((item, index) => (
+            <div
+              className="wheel-item"
+              key={index}
+              style={{ "--item-nb": index }}
+            >
+              {item}
+              {this.switchToName}
             </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Jackpot
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Forest
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Mountain
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Hell
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Underwater
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              City
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Landscape
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Beach
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Mountain
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Hell
-            </div>
-          </li>
-          <li>
-            <div className="text" contentEditable="true" spellCheck="false">
-              Forest
-            </div>
-          </li>
-        </ul>
-        <button className="spin-button" onClick={this.startRotation}>
-          Spin
-        </button>
+          ))}
+        </div>
       </div>
     );
   }
 }
-
-export default Wheel;
+export default Wheel
