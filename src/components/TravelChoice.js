@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios'
 import '../Main.css'
 
+
 const API_KEY = 'oLq3d1jR9aUQroza4Ttjnwn6TG6lHz6z'
 const badCities = [
     {id : 1580835607, city: 'Lille'},
