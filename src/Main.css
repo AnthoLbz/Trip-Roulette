@@ -25,7 +25,6 @@ header {
     top: -1rem;
     left: 0; 
     right: 0;
-
 }
 
 
@@ -46,14 +45,43 @@ footer {
 /* Page des webcams  */
 
 .webcamtv {
-    position: relative;
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+.webcamtv p {
+    display: none;
+}
+
+.webcamdetails {
+    font-family: 'Roboto' sans-serif;
+    font-size: 0.5rem;
+    border-style: solid;
+    border-color: #7d5c53;
+    box-shadow: 3px 4px #684e4c;
+    box-sizing: border-box;
+    background-color:#588789 ;
+    position: absolute;
+    bottom : auto;
+    top: 9rem;
+    right: 1rem;
+    left: 42.2rem;
+    height: 4.4rem;
+    padding: 0.2rem;
+    display: flex;
+    align-items: flex-start;
+    
 }
 
 iframe {
     border-style: none;
     position: absolute;
-    top: -2.2rem;
+    top: 0.7rem;
+    bottom: auto;
+    right: 9.5rem;
+    left: 14.8rem;
 }
