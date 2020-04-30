@@ -50,32 +50,7 @@ class TravelChoice extends React.Component {
 
    return(
        <>
-        {this.state.city === 'Marseille' ?
-            <div className='webcamtv'>
-                <div className='webcamdetails'>
-                    <h3>Allez l'OM</h3>
-                </div>
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='webcam of Mrs'src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
-            </div>
-        
-        : this.state.category !== '' ? 
-            <div className='webcamtv'>
-                <div className='webcamdetails'>
-                    <p>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</p>
-                    
-                    <h3>Bienvenue à {this.state.idAndTitleAndStatus.title}</h3>
-                    </div>
-                    <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
-                </div>
-        : 
-            <div className='webcamtv'>
-                    <div className='webcamdetails'>
-                    <h3>Pas de chance, vous arrivez à {this.state.badCity.city}</h3>
-                    </div>
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
-
-            </div> 
-        }
+       
        </>
    ) 
    }

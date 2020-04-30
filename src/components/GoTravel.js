@@ -23,6 +23,7 @@ class GoTravel extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            // test : places[this.props.location.state.test],
             test : places[this.props.location.state.test],
             category : '',
             city : '',
@@ -37,11 +38,17 @@ class GoTravel extends React.Component {
         this.getData()
     }
 
+    componentDidUpdate(prevProps, prevState) {
+  if (prevState.category !== this.state.category) {
+      this.getData()
+  }
+}
+
     getProps = () => {
         this.state.test === 'heaven' ?
             this.setState({city : 'Marseille'})
         : this.state.test !== 'hell' ?
-            this.setState({category : this.props.test})
+            this.setState({category : this.state.test})
         : console.log('affichage de bad city')
     }
 
@@ -61,29 +68,35 @@ class GoTravel extends React.Component {
        console.log(this.state.test)
 
    return(
-       <>
-        {this.state.city === 'Marseille' ?
-            <div className='webcamtv'>
-                {/* <h1>Allez l'OM</h1> */}
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='webcam of Mrs'src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
+    <>
+     {this.state.city === 'Marseille' ?
+         <div className='webcamtv'>
+             <div className='webcamdetails'>
+                 <h3>Allez l'OM</h3>
+             </div>
+             <iframe className='webcams' allow="autoplay" width='380' height='210' title='webcam of Mrs'src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
+         </div>
+     
+     : this.state.category !== '' ? 
+         <div className='webcamtv'>
+             <div className='webcamdetails'>
+                 <p>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</p>
+                 
+                 <h3>Bienvenue à {this.state.idAndTitleAndStatus.title}</h3>
+                 </div>
+                 <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
+             </div>
+     : 
+         <div className='webcamtv'>
+                 <div className='webcamdetails'>
+                 <h3>Pas de chance, vous arrivez à {this.state.badCity.city}</h3>
+                 </div>
+             <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
 
-            </div>
-        
-        : this.state.category !== '' ? 
-            <div className='webcamtv'>
-                <h2>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</h2>
-                <h3>Le lieu est : {this.state.idAndTitleAndStatus.title}</h3>
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
-            </div>
-        : 
-            <div className='webcamtv'>
-                <h3>Pas de chance, vous arrivez à : {this.state.badCity.city}</h3>
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
-
-            </div> 
-        }
-       </>
-   ) 
+         </div> 
+     }
+    </>
+) 
    }
 }
 
