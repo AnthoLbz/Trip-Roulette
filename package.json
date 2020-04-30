@@ -16,6 +16,7 @@
     "react-native-wheel-of-fortune": "0.0.8",
     "react-pose": "^4.0.10",
     "react-roulette": "0.0.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "semantic-ui-react": "^0.88.2"
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.css';
-import TravelChoice from './components/TravelChoice'
 import Modal from "./components/Modal"
+import Router from './Router';
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   </header>
     <div className='tv'>
         
-          <TravelChoice />
+          <Router/>
           <Modal/>
 
     </div>
