@@ -2,12 +2,14 @@
   --app-font: 'Roboto';
   --neutral-color: white;
 }
-
+.Launch{
+  background-color: transparent;
+}
 .Launch h1{
   font-family: var(--app-font);
   text-align: center;
   background: var(--neutral-color);
   user-select: none;
-  background-color: rgb(175, 87, 46);;
+  background-color: transparent;
   color: white;
 }

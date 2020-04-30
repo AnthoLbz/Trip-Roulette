@@ -9,7 +9,7 @@ class Launch extends React.Component {
       "Mountain",
       "Forest",
       "Landscape",
-      "Underwater",
+      "Heaven",
       "Beach",
       "City",
       "Hell",

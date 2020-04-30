@@ -36,10 +36,10 @@ class Wheel extends React.Component {
       "Mountain",
       "Forest",
       "Landscape",
-      "Underwater",
+      "Heaven",
       "Beach",
       "City",
-      "Reims",
+      "Hell",
     ];
 
     return (
@@ -64,4 +64,5 @@ class Wheel extends React.Component {
     );
   }
 }
+
 export default Wheel

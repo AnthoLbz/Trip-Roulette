@@ -1,11 +1,14 @@
 import React from "react";
 import "./App.css";
-import Launch from "./components/Launch";
+
+import Modal from "./components/Modal"
 
 function App() {
   return (
     <>
-      <Launch/>
+      <Modal/>
+
+
     </>
   );
 }

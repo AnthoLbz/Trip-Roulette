@@ -13,9 +13,7 @@
   --spinning-duration: 4s;
   --reset-duration: 0.25s;
 }
-body{
-  background-color: rgb(175, 87, 46);
-}
+
 /* Conteneur de la roue = cercle bleu extérieur */
 .wheel-container {
   display: block;
@@ -130,18 +128,11 @@ body{
   padding-left: 0px;
   opacity: 0.25;
 
-  /* 
-    Largeur du triangle
-    Je ne sais pas pourquoi j'ai besoin d'ajouter 
-      " + var(--wheel-size) / 2 " dans slice-max-width  ==> donne 2.PI.R + R
-    mais globalement ca marche a peu près bien 
-    TODO: A étudier 
-  */
+  
   --slice-max-width: calc(var(--PI) * var(--wheel-size) + var(--wheel-size) / 2);
   --slice-width: calc((var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing));
   border: solid transparent calc(var(--slice-width) / 2);
   border-left: solid transparent 0;
-  /* profondeur du triangle = du centre de la roue à la bordure = 300px / 2 */
   border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
 }
 h2{
@@ -154,4 +145,4 @@ h2{
 0%   { margin-left: -70px;opacity:0; }
 100% { margin-left: 0;opacity:1; }
 }
-h2 {opacity:0;animation: transition 1s ease-in-out 5s forwards;}
+h2 {opacity:0;animation: transition 1s ease-in-out 4.5s forwards;}
