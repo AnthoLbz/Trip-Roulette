@@ -1,0 +1,58 @@
+/* Page d'accueil le "Salon" */
+html body {
+    font-family: 'Montserrat', sans-serif; 
+    background: url('./LivingRoomTV.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: none;
+    position: relative ;
+}
+/* linear-gradient(#d99775, #c27475); */
+/* linear-gradient (#684e4c, #69504d, #7d5c53) */
+/* linear-gradient (#60d3b4, #5cc6a8) */
+header {
+    font-family: 'Roboto' sans-serif;
+    font-size: 0.9rem;
+    color: #d99775;
+    padding: none ;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    position: relative;
+    top: -1rem;
+    left: 0; 
+    right: 0;
+
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: absolute; 
+    bottom: -21.5rem; 
+    left: 0; 
+    right: 0}
+
+#footer {
+    font-size: xx-small; 
+    margin: 0rem !important ;
+    
+}
+
+/* Page des webcams  */
+
+.webcamtv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+iframe {
+    border-style: none;
+    position: absolute;
+    top: -2.2rem;
+}

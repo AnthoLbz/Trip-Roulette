@@ -1,15 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './Main.css';
 import TravelChoice from './components/TravelChoice'
+
 
 function App() {
   return (
-    <div className="App">
-      
-        <TravelChoice />
+  <>
+  <header className='headerSalon'>
+      <h2 id='triproulette'> Trip Roulette </h2>
+  </header>
+    <div className='tv'>
+        
+          <TravelChoice />
 
     </div>
+  <footer className='footerSalon'> 
+    <p id='footer'>Trip Roulette made by JB, Antho, Nadir & Jo</p>
+  </footer>
+  
+  </>
   );
 }
 

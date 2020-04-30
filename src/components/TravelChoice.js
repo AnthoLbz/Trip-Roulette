@@ -1,5 +1,6 @@
 import React from 'react'; 
 import Axios from 'axios'
+import '../Main.css'
 
 
 const API_KEY = 'oLq3d1jR9aUQroza4Ttjnwn6TG6lHz6z'
@@ -42,22 +43,22 @@ class TravelChoice extends React.Component {
    return(
        <>
         {this.state.city === 'Marseille' ?
-            <div>
-                <h1>Allez l'OM</h1>
-                <iframe allow="autoplay" src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
+            <div className='webcamtv'>
+                {/* <h1>Allez l'OM</h1> */}
+                <iframe className='webcams' allow="autoplay" width='380' height='210' title='webcam of Mrs'src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
 
             </div>
         
         : this.state.category !== '' ? 
-            <div>
+            <div className='webcamtv'>
                 <h2>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</h2>
                 <h3>Le lieu est : {this.state.idAndTitleAndStatus.title}</h3>
-                <iframe allow="autoplay" src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
+                <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
             </div>
         : 
-            <div>
+            <div className='webcamtv'>
                 <h3>Pas de chance, vous arrivez à : {this.state.badCity.city}</h3>
-                <iframe allow="autoplay" src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
+                <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
 
             </div> 
         }
