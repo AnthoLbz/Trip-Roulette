@@ -1,6 +1,6 @@
 /* Page d'accueil le "Salon" */
 html body {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif, 'Roboto'; 
     background: url('./LivingRoomTV.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100%;
@@ -14,25 +14,25 @@ html body {
 /* linear-gradient (#684e4c, #69504d, #7d5c53) */
 /* linear-gradient (#60d3b4, #5cc6a8) */
 /* linear-gradient (#588789, #4c7a7a) */
-header {
-    font-family: 'Roboto' sans-serif;
-    font-size: 0.9rem;
-    color: #d99775;
-    padding: none ;
+header .triproulette {
+    width: fit-content;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    position: relative;
-    top: -1rem;
-    left: 0; 
-    right: 0;
+    font-size: 0.9rem;
+    font-family: 'Roboto' sans-serif;
+    color: #60d3b4;
+    background-color: #5cc6a840;
+    padding: 0.6rem;    
+    top: 0.1rem;
+    right: -1.5rem;
+    
 }
-
 
 footer {
     display: flex;
     justify-content: center;
-    position: absolute; 
-    bottom: -21.5rem; 
+    position: relative; 
+    bottom: -14rem; 
     left: 0; 
     right: 0}
 
@@ -59,12 +59,13 @@ footer {
 
 .webcamdetails {
     font-family: 'Roboto' sans-serif;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+    color : #3f3538;
     border-style: solid;
     border-color: #7d5c53;
     box-shadow: 3px 4px #684e4c;
     box-sizing: border-box;
-    background-color:#588789 ;
+    background-color:#58878999 ;
     position: absolute;
     bottom : auto;
     top: 9rem;

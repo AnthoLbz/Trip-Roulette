@@ -8,9 +8,9 @@ function App() {
   return (
   <>
   <header className='headerSalon'>
-      <h2 id='triproulette'> Trip Roulette </h2>
+      <h2 className='triproulette'> Trip Roulette </h2>
   </header>
-    <div className='tv'>
+    <div>
         
           <TravelChoice />
           <Modal/>
