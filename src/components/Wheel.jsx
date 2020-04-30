@@ -21,7 +21,7 @@ class Wheel extends React.Component {
       this.setState({ selectedItem: null });
       setTimeout(this.selectItem, 500);
     }
-  }
+  };
   
   render() {
     const { selectedItem } = this.state;
@@ -32,7 +32,6 @@ class Wheel extends React.Component {
       "--selected-item": selectedItem,
     };
     const spinning = selectedItem !== null ? "spinning" : "";
-    
     const places = [
       "Mountain",
       "Forest",
@@ -40,11 +39,8 @@ class Wheel extends React.Component {
       "Underwater",
       "Beach",
       "City",
-      "Hell",
+      "Reims",
     ];
-    console.log(places[this.state.selectedItem]);
-
-    
 
     return (
       <div className="wheel-container">
@@ -60,10 +56,10 @@ class Wheel extends React.Component {
               style={{ "--item-nb": index }}
             >
               {item}
-              {this.switchToName}
             </div>
           ))}
         </div>
+        <h2>{places[this.state.selectedItem]}</h2>
       </div>
     );
   }
