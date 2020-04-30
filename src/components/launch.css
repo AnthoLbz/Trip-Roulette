@@ -1,5 +1,5 @@
 :root {
-  --app-font: 'Quicksand', 'Lato', sans-serif;
+  --app-font: 'Roboto';
   --neutral-color: white;
 }
 
@@ -8,6 +8,6 @@
   text-align: center;
   background: var(--neutral-color);
   user-select: none;
-  background-color: indianred;
+  background-color: rgb(175, 87, 46);;
   color: white;
 }

@@ -1,5 +1,5 @@
 *:root {
-  --wheel-font: 'Lato', 'Quicksand', sans-serif;
+  --wheel-font: 'Roboto';
   --wheel-size: 400px;
   --wheel-slice-spacing: 50px;
   --wheel-border-size: 5px;
@@ -14,7 +14,7 @@
   --reset-duration: 0.25s;
 }
 body{
-  background-color: indianred;
+  background-color: rgb(175, 87, 46);
 }
 /* Conteneur de la roue = cercle bleu extérieur */
 .wheel-container {
@@ -59,6 +59,7 @@ body{
 /* Roue */
 .wheel {
   display: block;
+  font-size: 20px;
   position: relative;
   box-sizing: content-box;
   margin: auto;
