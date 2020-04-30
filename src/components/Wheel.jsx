@@ -22,19 +22,7 @@ class Wheel extends React.Component {
       setTimeout(this.selectItem, 500);
     }
   }
-  switchToName(){
-    const places = [
-      "Mountain",
-      "Forest",
-      "Landscape",
-      "Underwater",
-      "Beach",
-      "City",
-      "Hell",
-    ];
-    const convert = places[this.state.selectedItem]
-    console.log(convert)
-  }
+  
   render() {
     const { selectedItem } = this.state;
     const { items } = this.props;
@@ -44,6 +32,17 @@ class Wheel extends React.Component {
       "--selected-item": selectedItem,
     };
     const spinning = selectedItem !== null ? "spinning" : "";
+    
+    const places = [
+      "Mountain",
+      "Forest",
+      "Landscape",
+      "Underwater",
+      "Beach",
+      "City",
+      "Hell",
+    ];
+    console.log(places[this.state.selectedItem]);
 
     
 

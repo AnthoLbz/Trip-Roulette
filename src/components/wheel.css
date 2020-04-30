@@ -13,7 +13,9 @@
   --spinning-duration: 4s;
   --reset-duration: 0.25s;
 }
-
+body{
+  background-color: indianred;
+}
 /* Conteneur de la roue = cercle bleu extérieur */
 .wheel-container {
   display: block;

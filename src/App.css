@@ -8,4 +8,6 @@
   text-align: center;
   background: var(--neutral-color);
   user-select: none;
+  background-color: indianred;
+  color: white;
 }
