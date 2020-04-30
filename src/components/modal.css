@@ -1,0 +1,31 @@
+.modal-button{
+position:relative;
+left: 690px;
+top: 30px;
+font-family: 'calibri';
+font-weight: bold;
+font-size: 18px;
+border-radius: 50%;
+--height: 200px;
+--width: 200px;
+height: var(--height);
+width: var(--width);
+background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18285489.jpg);
+background-repeat: no-repeat;
+background-size: var(--width) var(--height);
+background-color:transparent;
+color: white;
+}
+
+.frame{
+border: transparent;
+border-radius: 10px;
+background-color: rgb(104,78,76, 0.4);
+position:relative;
+left: 520px;
+top: 60px;
+padding: 5px 50px 10px 50px;
+}
+.frame-2{
+background-color: transparent
+}
