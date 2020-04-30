@@ -1,5 +1,6 @@
 import React from "react";
 import "./wheel.css";
+// import Link from 'react-router-dom'
 
 class Wheel extends React.Component {
   constructor(props) {
