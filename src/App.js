@@ -13,7 +13,7 @@ function App() {
     <div>
         
           <TravelChoice />
-          <Modal/>
+          <Modal />
 
     </div>
   <footer className='footerSalon'> 
