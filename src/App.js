@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import TravelChoice from './components/TravelChoice'
+import Modal from "./components/Modal"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className='tv'>
         
           <TravelChoice />
+          <Modal/>
 
     </div>
   <footer className='footerSalon'> 
@@ -19,7 +21,8 @@ function App() {
   </footer>
   
   </>
-  );
+      
+  )
 }
 
 export default App;

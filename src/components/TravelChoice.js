@@ -1,7 +1,6 @@
 import React from 'react'; 
 import Axios from 'axios'
 import '../Main.css'
-import ReactPlayer from 'react-player'
 
 
 const API_KEY = 'oLq3d1jR9aUQroza4Ttjnwn6TG6lHz6z'
