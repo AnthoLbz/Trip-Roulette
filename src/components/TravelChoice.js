@@ -14,7 +14,7 @@ class TravelChoice extends React.Component {
         super(props)
         this.state = {
             category : '',
-            city : 'Marseille',
+            city : '',
             webcams : [],
             idAndTitleAndStatus : [],
             badCity : badCities[Math.floor(Math.random() * badCities.length)]        
@@ -51,20 +51,26 @@ class TravelChoice extends React.Component {
        <>
         {this.state.city === 'Marseille' ?
             <div className='webcamtv'>
-                {/* <h1>Allez l'OM</h1> */}
+                <div className='webcamdetails'>
+                    <h3>Allez l'OM</h3>
+                </div>
                 <iframe className='webcams' allow="autoplay" width='380' height='210' title='webcam of Mrs'src={`https://webcams.windy.com/webcams/public/embed/player/${cityOfMarseille}/stream`}></iframe>
-
             </div>
         
         : this.state.category !== '' ? 
             <div className='webcamtv'>
-                <h2>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</h2>
-                <h3>Le lieu est : {this.state.idAndTitleAndStatus.title}</h3>
-                <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
-            </div>
+                <div className='webcamdetails'>
+                    <p>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</p>
+                    
+                    <h3>Bienvenue à {this.state.idAndTitleAndStatus.title}</h3>
+                    </div>
+                    <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
+                </div>
         : 
             <div className='webcamtv'>
-                <h3>Pas de chance, vous arrivez à : {this.state.badCity.city}</h3>
+                    <div className='webcamdetails'>
+                    <h3>Pas de chance, vous arrivez à {this.state.badCity.city}</h3>
+                    </div>
                 <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
 
             </div> 
