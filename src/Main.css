@@ -18,7 +18,7 @@ header .triproulette {
     width: fit-content;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: 'Roboto' sans-serif;
     color: #60d3b4;
     background-color: #5cc6a840;
@@ -32,12 +32,12 @@ footer {
     display: flex;
     justify-content: center;
     position: relative; 
-    bottom: -30rem; 
+    bottom: -32rem; 
     left: 0; 
     right: 0}
 
 #footer {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold; 
     margin: 0rem !important ;
     
@@ -60,7 +60,7 @@ footer {
 
 .webcamdetails {
     font-family: 'Roboto' sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color : #3f3538;
     border-style: solid;
     border-color: #7d5c53;
@@ -71,8 +71,9 @@ footer {
     bottom : auto;
     top: 29rem;
     right: 1rem;
-    left: 79rem;
-    height: 4.4rem;
+    left: 74rem;
+    height: 5rem;
+    text-align: justify;
     padding: 0.2rem;
     display: flex;
     align-items: flex-start;
@@ -82,10 +83,10 @@ footer {
 iframe {
     border-style: none;
     position: absolute;
-    top: 1.9rem;
+    top: 1.8rem;
     bottom: auto;
     right: 9.5rem;
-    left: 27rem;
+    left: 27.2rem;
     height: 395px;
     width: 730px;
 }

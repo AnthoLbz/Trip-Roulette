@@ -80,16 +80,16 @@ class GoTravel extends React.Component {
      : this.state.category !== '' ? 
          <div className='webcamtv'>
              <div className='webcamdetails'>
-                 <p>L'id de la webcam est : {this.state.idAndTitleAndStatus.id}</p>
+                 <p>Webcam's Id is : {this.state.idAndTitleAndStatus.id}</p>
                  
-                 <h3>Bienvenue à {this.state.idAndTitleAndStatus.title}</h3>
+                 <h3>Welcome to {this.state.idAndTitleAndStatus.title}</h3>
                  </div>
                  <iframe className='webcams' allow="autoplay" width='380' height='210' title='random webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.idAndTitleAndStatus.id}/stream`}></iframe>
              </div>
      : 
          <div className='webcamtv'>
                  <div className='webcamdetails'>
-                 <h3>Pas de chance, vous arrivez à {this.state.badCity.city}</h3>
+                 <h3>Too bad, you arrived in {this.state.badCity.city}</h3>
                  </div>
              <iframe className='webcams' allow="autoplay" width='380' height='210' title='bad webcam' src={`https://webcams.windy.com/webcams/public/embed/player/${this.state.badCity.id}/stream`}></iframe>
 
