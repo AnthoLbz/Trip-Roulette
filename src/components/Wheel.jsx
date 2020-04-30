@@ -1,5 +1,6 @@
 import React from "react";
 import "./wheel.css";
+import {Link} from 'react-router-dom'
 
 class Wheel extends React.Component {
   constructor(props) {
@@ -50,16 +51,24 @@ class Wheel extends React.Component {
           onClick={this.selectItem}
         >
           {items.map((item, index) => (
-            <div
-              className="wheel-item"
-              key={index}
-              style={{ "--item-nb": index }}
-            >
-              {item}
-            </div>
+          <Link to={{
+              pathname : '/',
+              state : {test : this.state.selectedItem}
+            }}>
+                <div
+                className="wheel-item"
+                key={index}
+                style={{ "--item-nb": index }}
+              >
+                {item}
+              </div>
+          </Link>
           ))}
         </div>
-        <h2>{places[this.state.selectedItem]}</h2>
+        <Link to={{
+              pathname : '/travel',
+              state : {test : this.state.selectedItem}
+            }}><h2>{places[this.state.selectedItem]}</h2></Link>
       </div>
     );
   }
