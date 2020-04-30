@@ -9,12 +9,23 @@ const badCities = [
             ]
 const cityOfMarseille = 1421725202
 
-class TravelChoice extends React.Component {
+const places = [
+    "mountain",
+    "forest",
+    "landscape",
+    "heaven",
+    "beach",
+    "city",
+    "hell",
+  ];
+
+class GoTravel extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            test : places[this.props.location.state.test],
             category : '',
-            city : 'Marseille',
+            city : '',
             webcams : [],
             idAndTitleAndStatus : [],
             badCity : badCities[Math.floor(Math.random() * badCities.length)]        
@@ -22,13 +33,14 @@ class TravelChoice extends React.Component {
 
     }
     componentDidMount() {
+        this.getProps()
         this.getData()
     }
 
     getProps = () => {
-        this.props.test === 'Heaven' ?
+        this.state.test === 'heaven' ?
             this.setState({city : 'Marseille'})
-        : this.props.test !== 'Hell' ?
+        : this.state.test !== 'hell' ?
             this.setState({category : this.props.test})
         : console.log('affichage de bad city')
     }
@@ -46,6 +58,7 @@ class TravelChoice extends React.Component {
 
 
    render() {
+       console.log(this.state.test)
 
    return(
        <>
@@ -74,4 +87,4 @@ class TravelChoice extends React.Component {
    }
 }
 
-export default TravelChoice
+export default GoTravel
