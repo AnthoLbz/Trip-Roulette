@@ -23,6 +23,7 @@ class GoTravel extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            // test : places[this.props.location.state.test],
             test : places[this.props.location.state.test],
             category : '',
             city : '',
@@ -37,11 +38,17 @@ class GoTravel extends React.Component {
         this.getData()
     }
 
+    componentDidUpdate(prevProps, prevState) {
+  if (prevState.category !== this.state.category) {
+      this.getData()
+  }
+}
+
     getProps = () => {
         this.state.test === 'heaven' ?
             this.setState({city : 'Marseille'})
         : this.state.test !== 'hell' ?
-            this.setState({category : this.props.test})
+            this.setState({category : this.state.test})
         : console.log('affichage de bad city')
     }
 
