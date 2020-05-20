@@ -1,13 +1,15 @@
 :root {
-  --app-font: 'Quicksand', 'Lato', sans-serif;
+  --app-font: 'Roboto';
   --neutral-color: white;
 }
-
-.App h1{
+.Launch{
+  background-color: transparent;
+}
+.Launch h1{
   font-family: var(--app-font);
   text-align: center;
   background: var(--neutral-color);
   user-select: none;
-  background-color: indianred;
+  background-color: transparent;
   color: white;
 }

@@ -1,0 +1,29 @@
+.modal-button{
+position:relative;
+left: 3.9rem;
+top: 3.2rem;
+height: 9rem;
+width: 9rem;
+border-radius: 50%;
+box-shadow: 2px 3px 0px #4c7a7a97;
+opacity: 0.8;
+background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18285489.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.frame {
+font-weight: lighter;
+border: transparent;
+border-radius: 10px;
+background-color: #7d5c5395 ;
+position: relative;
+left: 35rem;
+right: auto;
+top: -10rem;
+padding: 1rem;
+}
+
+.frame-2{
+background-color: transparent
+}
