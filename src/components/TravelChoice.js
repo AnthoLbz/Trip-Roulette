@@ -8,7 +8,7 @@ const badCities = [
     {id : 1580835607, city: 'Lille'},
     {id : 1582907598, city : 'Reims'}
             ]
-const cityOfMarseille = 1421725202
+// const cityOfMarseille = 1421725202
 
 class TravelChoice extends React.Component {
     constructor(props) {
